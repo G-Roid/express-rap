@@ -10,6 +10,6 @@ app.get('/', (request, response) => {
 
 })
 
-app.listen(8000, () => {
-    console.log('using post 8000')
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`Server running on port ${PORT}`)
 })
