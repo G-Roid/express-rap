@@ -10,4 +10,6 @@ app.get('/', (request, response) => {
 
 })
 
-app.listen(8000)
+app.listen(8000, () => {
+    console.log('using post 8000')
+})
