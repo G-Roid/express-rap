@@ -5,6 +5,8 @@ const PORT = 8000
 const cors = require('cors')
 app.use(cors())
 
+app.use(express.json())
+
 pastas = {
     penne: {    
         type: 'tube',
