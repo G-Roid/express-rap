@@ -1,5 +1,8 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+
+app.use(cor())
 
 app.get('/', (request, response) => {
     console.log('server running.....')
