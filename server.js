@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
 const PORT = 8000
-// const cors = require('cors')
 
-// app.use(cors())
+const cors = require('cors')
+app.use(cors())
 
 pastas = {
-    penne: {
+    penne: {    
         type: 'tube',
         time: '2 minutes'
     }
