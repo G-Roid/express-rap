@@ -7,7 +7,7 @@ app.use(cors())
 
 app.use(express.json())
 
-pastas = {
+const pastas = {
     penne: {    
         type: 'tube',
         time: '2 minutes'
@@ -39,7 +39,7 @@ app.get('/api', (request, response) => {
 app.get('/api/:name', (request,response)=>{
     const pasta = request.params.name.toLowerCase()
     if(pastas[pasta]){
-        response.json(rappers[rapName])
+        response.json(pastas[pasta])
     }else{
         response.json(pastas['unknown'])
     } 
