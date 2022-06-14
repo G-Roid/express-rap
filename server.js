@@ -11,7 +11,17 @@ pastas = {
     penne: {    
         type: 'tube',
         time: '2 minutes'
+    },
+    spaghetti: {
+        type: 'long',
+        time: '4 minutes'
+    },
+    unknown: {
+        type: 'unknown',
+        time: 'unknown'
     }
+    
+
 }
 
 app.use(express.static('public'))
@@ -26,12 +36,12 @@ app.get('/api', (request, response) => {
     response.json(pastas)
 })
 
-app.get('/api/rap/:name', (request,response)=>{
-    const rapName = request.params.name.toLowerCase()
-    if(rappers[rapName]){
+app.get('/api/:name', (request,response)=>{
+    const pasta = request.params.name.toLowerCase()
+    if(pastas[pasta]){
         response.json(rappers[rapName])
     }else{
-        response.json(rappers['unknown'])
+        response.json(pastas['unknown'])
     } 
 })
 
